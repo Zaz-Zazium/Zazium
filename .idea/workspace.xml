@@ -5,35 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d487739-e4f7-4e9e-8a73-dd8958f375d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/zazium/BlockchainFixed/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zazium/BlockchainFixed/Header.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zazium/BlockchainFixed/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/J.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/J.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BB/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/BB/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BB/Blockchain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/BB/Blockchain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BB/Chainers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/BB/Chainers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BB/DifficultySetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/BB/DifficultySetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BB/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/BB/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Misc/Checksums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Misc/Checksums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Misc/Conv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Misc/Conv.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Misc/Fileread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Misc/Fileread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Net/CliRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Net/CliRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Net/CliStarts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Net/CliStarts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Net/Nodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Net/Nodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Net/SerStarts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Net/SerStarts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Net/SerThreader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Net/SerThreader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Starts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Starts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TTest/AB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/TTest/AB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TTest/ECDSAExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/TTest/ECDSAExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TTest/ECTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/TTest/ECTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TTest/QWERT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/TTest/QWERT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TTest/TestConve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/TTest/TestConve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TTest/Testers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/TTest/Testers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TTest/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/TTest/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Uses/Usermain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Uses/Usermain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Uses/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Uses/Wallet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +91,7 @@
       <workItem from="1622930666033" duration="1149000" />
       <workItem from="1623015777660" duration="842000" />
       <workItem from="1623102135660" duration="3236000" />
+      <workItem from="1623189637319" duration="1749000" />
     </task>
     <servers />
   </component>
