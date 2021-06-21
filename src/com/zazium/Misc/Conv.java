@@ -17,4 +17,8 @@ public class Conv {
         return hexString.toString();
     }
 
+    public static void stringToBinary(){
+
+    }
+
 }

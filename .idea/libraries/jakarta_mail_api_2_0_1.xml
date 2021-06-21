@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="jakarta.mail-api-2.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/jar_files/jakarta.mail-api-2.0.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jar_files/jakarta.activation-api-2.0.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jar_files/bcutil-jdk15to18-1.69.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jar_files/bcprov-jdk15to18-1.69.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jar_files/bcpkix-jdk15to18-1.69.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jar_files/bcjmail-jdk15to18-1.69.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

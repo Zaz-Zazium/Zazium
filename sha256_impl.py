@@ -321,15 +321,15 @@ for i in range(100):
     #print("f", i,": ", fake)
     
     encoded = msg.encode()
-    result = hashlib.sha256(encoded)
+    #result = hashlib.sha256(encoded)
     #print("r", i,": ", result.hexdigest())
     
     msg = msg + "a"
     
-    if fake != result.hexdigest():
-        print(msg)
-        print("f", i,": ", fake)
-        print("r", i,": ", result.hexdigest())
+    # if fake != result.hexdigest():
+    #     print(msg)
+    #     print("f", i,": ", fake)
+    #     print("r", i,": ", result.hexdigest())
 
 
 #hashes("1")
