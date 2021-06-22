@@ -20,6 +20,16 @@ h5 = format(f'{int((13**(1/2) - int(13**(1/2))) * 2**32):032b}')
 h6 = format(f'{int((17**(1/2) - float("{:.0f}".format(17**(1/2)))) * 2**32):032b}')
 h7 = format(f'{int((19**(1/2) - float("{:.0f}".format(19**(1/2)))) * 2**32):032b}')
 
+print(h0)
+print(h1)
+print(h2)
+print(h3)
+print(h4)
+print(h5)
+print(h6)
+print(h7)
+
+
 def rt2s():
     res = []
     for i in range(len(rt2)):
