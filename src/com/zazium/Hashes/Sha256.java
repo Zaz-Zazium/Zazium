@@ -1,6 +1,7 @@
 package com.zazium.Hashes;
 
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class Sha256 {
@@ -22,34 +23,31 @@ public class Sha256 {
         return rt;
     }
 
-    public static void main(String[] args) {
-        //2^1/2 - 2^1/2 * 2^32
-
-        //int e = (int)((Math.sqrt(2) - (int)Math.sqrt(2))*Math.pow(2, 32));
-        //String df = String.format(Integer.toBinaryString(e));
-        //String qq = addZeros(String.format(Integer.toBinaryString((int)((Math.sqrt(2) - (int)Math.sqrt(2))*Math.pow(2, 32)))),32);
-
-
-        //System.out.println(e);
-        //System.out.println(df);
-        //System.out.println(qq);
-        //System.out.println(qq.length());
-
-        ArrayList<String> art = rt2s();
-        for(int i = 0; i < art.size(); i++){
-            System.out.println(art.get(i));
+    public static ArrayList<String> rt3s(){
+        //2^1/3 - 2^1/3 * 2^32
+        ArrayList<String> rt = new ArrayList<>();
+        for (int i = 0; i < rt3.length; i++){
+            rt.add(addZeros(String.format(Long.toBinaryString((long)((Math.sqrt(rt3[i]) - (int)Math.sqrt(rt3[i]))*Math.pow(2, 32)))),32));
         }
-        //hashes("abc");
+        return rt;
+    }
+
+
+    public static void main(String[] args) {
+        hashes("123");
 
     }
 
     public static void hashes(String msg){
+        ArrayList<String> rt22 = rt2s();
+        ArrayList<String> rt33 = rt3s();
+
         String message = "";
         for (int i = 0; i < msg.length(); i++){
-            message += String.format("%08d", Integer.parseInt(Integer.toBinaryString((int) msg.charAt(i))));
+            message += String.format("%08d", Integer.parseInt(Integer.toBinaryString((int) msg.charAt(i)))); //msg to binary
         }
-        String msgLen = String.format("%064d", Integer.parseInt(Integer.toBinaryString((int) message.length())));
-        int chunkno = chunkNo(msg);
+        String msgLen = String.format("%064d", Integer.parseInt(Integer.toBinaryString((int) message.length()))); //msg length in binary
+        int chunkno = chunkNo(msg); //chuncks required
 
         message += "1";
         int padding = chunkno*512-(message.length()+64);
@@ -57,19 +55,18 @@ public class Sha256 {
         for (int i = 0; i < padding; i++){
             message += "0";
         }
-        System.out.println(message);
-        System.out.println(message.length());
+        message += msgLen;
 
         int min = 0;
         int max = 512;
         ArrayList<String> chunks = new ArrayList<>();
         for (int i = 0; i < chunkno; i++){
-            chunks.add(message.substring(min,max));
+            chunks.add(message.substring(min,max)); //split into chunks of 512bit
             min += 512;
             max += 512;
         }
 
-        //Process the message in successive 512-bit chunks:
+        //process the message in successive 512bit chunks:
         for (int i = 0; i < chunkno; i++){
             String newMsg = chunks.get(i);
             min = 0;
@@ -82,67 +79,93 @@ public class Sha256 {
                 max = 32;
             }
 
+            //
+            //
+            //
+            for (int j = 0; j < 16; j++){
+
+            }
+            //
+            //
+            //
+
             for (int j = 16; j < 64; j++){
                 //int mlen = msgChunks.size();
                 String s0 = sig0(msgChunks.get(msgChunks.size()-15));
                 String s1 = sig1(msgChunks.get(msgChunks.size()-2));
                 String addup = adder(msgChunks.get(msgChunks.size()-16), s0, msgChunks.get(msgChunks.size()-7), s1);
+                msgChunks.add(addup);
 
             }
-//            String a = h0;
-//            String b = h1;
-//            String c = h2;
-//            String d = h3;
-//            String e = h4;
-//            String f = h5;
-//            String g = h6;
-//            String h = h7;
+            String a = rt22.get(0);
+            String b = rt22.get(1);
+            String c = rt22.get(2);
+            String d = rt22.get(3);
+            String e = rt22.get(4);
+            String f = rt22.get(5);
+            String g = rt22.get(6);
+            String h = rt22.get(7);
+
+            for (int j = 0; j < 64; j++){
+                String S1 = sigma1(e);
+                String ch = cho(e,f,g);
+                String temp1 = adders(Long.parseLong(h, 2) + Long.parseLong(S1, 2) +
+                        Long.parseLong(ch, 2) + Long.parseLong(rt33.get(j), 2) +
+                        Long.parseLong(msgChunks.get(j), 2));
+
+                String S0 = sigma0(a);
+                String maj = mj(a,b,c);
+                String temp2 = adders(Long.parseLong(S0, 2) + Long.parseLong(maj, 2));
+
+                h = g;
+                g = f;
+                f = e;
+                e = adders(Long.parseLong(d, 2) + Long.parseLong(temp1, 2));
+                d = c;
+                c = b;
+                b = a;
+                a = adders(Long.parseLong(temp1, 2) + Long.parseLong(temp2, 2));
+
+            }
+            rt22.set(0, adders(Long.parseLong(rt22.get(0), 2) + Long.parseLong(a, 2)));
+            rt22.set(1, adders(Long.parseLong(rt22.get(1), 2) + Long.parseLong(b, 2)));
+            rt22.set(2, adders(Long.parseLong(rt22.get(2), 2) + Long.parseLong(c, 2)));
+            rt22.set(3, adders(Long.parseLong(rt22.get(3), 2) + Long.parseLong(d, 2)));
+            rt22.set(4, adders(Long.parseLong(rt22.get(4), 2) + Long.parseLong(e, 2)));
+            rt22.set(5, adders(Long.parseLong(rt22.get(5), 2) + Long.parseLong(f, 2)));
+            rt22.set(6, adders(Long.parseLong(rt22.get(6), 2) + Long.parseLong(g, 2)));
+            rt22.set(7, adders(Long.parseLong(rt22.get(7), 2) + Long.parseLong(h, 2)));
+
 
         }
+        String digest = "";
+        String hexStr = "";
+        for (int j = 0; j < 8; j++){
+            digest += rt22.get(j);
+            long decimal = Long.parseLong(rt22.get(j),2);
+            hexStr += Long.toString(decimal,16);
+        }
+        //long decimal = Long.parseLong(digest,2);
+        //String hexStr = Long.toString(decimal,16);
+        String hexString = new BigInteger(digest, 2).toString(16);
 
-
+        System.out.println(digest);
+        System.out.println(hexString);
+//        digestRes = hex(int(digest, 2))
+//        digestOb = digestRes[2:]
 //
-//        a = h0
-//        b = h1
-//        c = h2
-//        d = h3
-//        e = h4
-//        f = h5
-//        g = h6
-//        h = h7
+//        if len(digestOb) < 64:
+//        digestOb = "0" + digestOb
 //
-//        k = rt3s()
-//        for j in range(64):
-//        S1 = sigma1(e)
-//        ch = cho(e,f,g)
-//        temp1 = adders5(h,S1,ch,k[j],messageChunk[j])
-//
-//        S0 = sigma0(a)
-//        maj = mj(a,b,c)
-//        temp2 = adders2(S0, maj)
-//
-//        h = g
-//        g = f
-//        f = e
-//        e = adders2(d, temp1)
-//        d = c
-//        c = b
-//        b = a
-//        a = adders2(temp1, temp2)
-//
-//        h0 = adders2(h0, a)
-//        h1 = adders2(h1, b)
-//        h2 = adders2(h2, c)
-//        h3 = adders2(h3, d)
-//        h4 = adders2(h4, e)
-//        h5 = adders2(h5, f)
-//        h6 = adders2(h6, g)
-//        h7 = adders2(h7, h)
+//    # print(digest)
+//    # print(len(digest))
+//    # print(hex(int(digest, 2)))
+//    #return hex(int(digest, 2))
+//        return digestOb
 
     }
 
     public static int chunkNo(String msg){
-        System.out.println();
         int chunks = 1;
         int bsize = 447;
 
@@ -161,53 +184,139 @@ public class Sha256 {
     }
 
     public static String sig0(String bits){
+        String a = rotr(bits,7);
+        String b = rotr(bits,18);
+        String c = shr(bits,3);
 
-        return null;
+        String res = xor(a,b,c);
+        return res;
     }
 
     public static String sig1(String bits){
+        String a = rotr(bits,17);
+        String b = rotr(bits,19);
+        String c = shr(bits,10);
 
-        return null;
+        String res = xor(a,b,c);
+        return res;
     }
 
     public static String sigma0(String bits){
+        String a = rotr(bits,2);
+        String b = rotr(bits,13);
+        String c = rotr(bits,22);
 
-        return null;
+        String res = xor(a,b,c);
+        return res;
     }
 
     public static String sigma1(String bits){
+        String a = rotr(bits,6);
+        String b = rotr(bits,11);
+        String c = rotr(bits,25);
 
-        return null;
+        String res = xor(a,b,c);
+        return res;
     }
 
     public static String xor(String a, String b, String c){
-
-        return null;
+        String res = "";
+        for(int i = 0; i < a.length(); i++){
+            if(a.substring(i).equals("1") && b.substring(i).equals("1")){
+                res += "1";
+            }else if(b.substring(i).equals("1") && c.substring(i).equals("1")){
+                res += "1";
+            }else if(a.substring(i).equals("1") && c.substring(i).equals("1")){
+                res += "1";
+            }else{
+                res += "0";
+            }
+        }
+        return res;
     }
 
     public static String adder(String a, String b, String c, String d){
+        String res = "";
+        long aint = Long.parseLong(a, 2);
+        long bint = Long.parseLong(b, 2);
+        long cint = Long.parseLong(c, 2);
+        long dint = Long.parseLong(d, 2);
+        long r = aint + bint + cint + dint;
 
-        return null;
+        String binr = Long.toBinaryString((long) r);
+        if(binr.length() == 32){
+            res = binr;
+        }else if(binr.length() >= 32){
+            res = Long.toBinaryString((long) (r % Math.pow(2,32)));
+        }
+
+        if(res.length() < 32){
+            res = addZeros(res,32);
+        }
+        return res;
+    }
+
+    public static String adders(long a){
+        String res = "";
+        long r = a;
+
+        //String binr = String.format("%032d", Long.parseLong(Long.toBinaryString((long) r)));
+        String binr = Long.toBinaryString((long) r);
+        if(binr.length() == 32){
+            res = binr;
+        }else if(binr.length() >= 32){
+            res = Long.toBinaryString((long) (r % Math.pow(2,32)));
+        }
+
+        if(res.length() < 32){
+            res = addZeros(res,32);
+        }
+        return res;
     }
 
     public static String rotr(String a, int rotnumber){
-
-        return null;
+        for(int i = 0; i < rotnumber; i++){
+            String last_char = a.substring(a.length()-1);
+            a = a.substring(0,a.length()-1);
+            a = last_char + a;
+        }
+        return a;
     }
 
     public static String shr(String a, int rotnumber){
-
-        return null;
+        for(int i = 0; i < rotnumber; i++){
+            a = a.substring(0,a.length()-1);
+            a = "0" + a;
+        }
+        return a;
     }
 
     public static String cho(String a, String b, String c){
-
-        return null;
+//    #use 'a' input to determine whether to take 'b' or 'c'
+        String res = "";
+        for(int i = 0; i < a.length(); i++){
+            if(a.substring(i).equals("1")){
+                res += b.substring(i);
+            }else if(a.substring(i).equals("0")){
+                res += c.substring(i);
+            }
+        }
+        return res;
     }
 
     public static String mj(String a, String b, String c){
-
-        return null;
+//    #take majority input value
+        String res = "";
+        for(int i = 0; i < a.length(); i++){
+            if((a.substring(i).equals("1") && b.substring(i).equals("1")) ^
+                    (a.substring(i).equals("1") && c.substring(i).equals("1")) ^
+                    (b.substring(i).equals("1") && c.substring(i).equals("1"))){
+                res += "1";
+            }else{
+                res += "0";
+            }
+        }
+        return res;
     }
 
     public static String addZeros(String msg, int newLen){
