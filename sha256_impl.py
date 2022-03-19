@@ -20,14 +20,14 @@ h5 = format(f'{int((13**(1/2) - int(13**(1/2))) * 2**32):032b}')
 h6 = format(f'{int((17**(1/2) - float("{:.0f}".format(17**(1/2)))) * 2**32):032b}')
 h7 = format(f'{int((19**(1/2) - float("{:.0f}".format(19**(1/2)))) * 2**32):032b}')
 
-print(h0)
-print(h1)
-print(h2)
-print(h3)
-print(h4)
-print(h5)
-print(h6)
-print(h7)
+# print(h0)
+# print(h1)
+# print(h2)
+# print(h3)
+# print(h4)
+# print(h5)
+# print(h6)
+# print(h7)
 
 
 def rt2s():
@@ -161,7 +161,7 @@ def hashes(stringIn):
     digest = h0 + h1 + h2 + h3 + h4 + h5 + h6 + h7
     digestRes = hex(int(digest, 2))
     digestOb = digestRes[2:]
-    
+    print(digest)
     if len(digestOb) < 64:
         digestOb = "0" + digestOb
     
@@ -324,17 +324,17 @@ def mj(a,b,c):#
 
 
 msg = ""
-for i in range(100):
+for i in range(1):
     #print(msg)
     
     fake = hashes(msg)
     #print("f", i,": ", fake)
     
-    encoded = msg.encode()
+    #encoded = msg.encode()
     #result = hashlib.sha256(encoded)
     #print("r", i,": ", result.hexdigest())
     
-    msg = msg + "a"
+    #msg = msg + "a"
     
     # if fake != result.hexdigest():
     #     print(msg)
