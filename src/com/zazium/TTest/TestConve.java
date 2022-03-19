@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class TestConve {
+
     public static ArrayList generateEntropy(){
+
         ArrayList<Integer> entropy1 = new ArrayList();
         ArrayList<Integer> entropy2 = new ArrayList();
         ArrayList<Integer> entropy3 = new ArrayList();
