@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/Testt/production/J/com/zazium/Hashes/Sha256.class" beforeDir="false" afterPath="$PROJECT_DIR$/Testt/production/J/com/zazium/Hashes/Sha256.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sha256_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/sha256_impl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/zazium/Hashes/Sha256.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/Hashes/Sha256.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zazium/TTest/TestConve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zazium/TTest/TestConve.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +39,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jar_files/bcjmail-jdk15to18-1.69.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Kurdcoin" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -126,7 +127,15 @@
       <workItem from="1623189637319" duration="1749000" />
       <workItem from="1624226784788" duration="5674000" />
       <workItem from="1624311343455" duration="15300000" />
-      <workItem from="1624368092491" duration="4443000" />
+      <workItem from="1624368092491" duration="5065000" />
+      <workItem from="1624407302597" duration="904000" />
+      <workItem from="1624485036574" duration="11666000" />
+      <workItem from="1638377199130" duration="52000" />
+      <workItem from="1638466589711" duration="874000" />
+      <workItem from="1638472853243" duration="1147000" />
+      <workItem from="1638725939894" duration="743000" />
+      <workItem from="1638891886087" duration="4122000" />
+      <workItem from="1639073486283" duration="2450000" />
     </task>
     <servers />
   </component>
